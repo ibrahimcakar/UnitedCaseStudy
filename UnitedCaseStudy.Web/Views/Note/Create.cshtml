@@ -1,0 +1,25 @@
+﻿@model Note
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <form asp-controller="Note" asp-action="Create" method="post">
+                
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label class="control-label">Not</label>
+                        <input class="form-control" asp-for="NoteText" required />
+                    </div>
+                    <input type="hidden" id="ParentNoteId" name="ParentNoteId" value="@Model.ParentNoteId" />
+                    <input type="hidden" id="IsDeleted" name="IsDeleted" value="@Model.IsDeleted=false" />
+                </div>
+           
+                <div class="row form-group">
+                    <div class="col-lg-12">
+                        <input type="submit" class="btn btn-primary" value="Kaydet" style="float: right;" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
